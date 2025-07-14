@@ -50,8 +50,8 @@ nano config/env.php
 
 #### Nginx
 ```nginx
-location /php-api/ {
-    try_files $uri $uri/ /php-api/index.php?route=$uri&$args;
+location /backend/ {
+    try_files $uri $uri/ /backend/index.php?route=$uri&$args;
     
     # CORS
     add_header 'Access-Control-Allow-Origin' '*';
@@ -184,7 +184,7 @@ Content-Type: application/json
 ### Exemplo de uso
 ```javascript
 // Login
-const response = await fetch('/php-api/auth/login', {
+const response = await fetch('/auth/login', {
   method: 'POST',
   headers: { 'Content-Type': 'application/json' },
   body: JSON.stringify({ email, password })
@@ -193,7 +193,7 @@ const response = await fetch('/php-api/auth/login', {
 const { token } = await response.json();
 
 // Usar token em outras requisições
-const voluntarios = await fetch('/php-api/voluntarios', {
+const voluntarios = await fetch('/voluntarios', {
   headers: {
     'Authorization': `Bearer ${token}`,
     'Content-Type': 'application/json'
