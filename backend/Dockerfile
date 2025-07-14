@@ -24,3 +24,4 @@ EXPOSE 80
 
 # Ajusta a porta do Apache para a variável de ambiente $PORT (usada pelo Render)
 RUN sed -i "s/80/\${PORT}/g" /etc/apache2/ports.conf /etc/apache2/sites-enabled/000-default.conf 
+RUN a2enmod rewrite 
