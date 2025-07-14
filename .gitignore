@@ -1,0 +1,5 @@
+vendor/
+.env
+uploads/
+escala-obpc-8c54f-firebase-adminsdk.json
+composer.lock 
